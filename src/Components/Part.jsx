@@ -1,13 +1,20 @@
 import PropTypes from 'prop-types';
 
-const Part = ({ part }) => {
+const Part = ({ parts }) => {
+  console.log(parts)
   return (
-      <p>{part.name} {part.exercises}</p> 
+    <>
+    {parts.map(part => (
+      <div key={part.id}>
+        <p>{part.name} - Exercises: {part.exercises}</p>
+      </div>
+    ))}
+  </>
     )
   }
   
   Part.propTypes = {
-    part: PropTypes.object
+    parts: PropTypes.array
   }
   
 

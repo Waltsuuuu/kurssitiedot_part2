@@ -1,13 +1,10 @@
 import PropTypes from 'prop-types';
 
 const Total = ( {parts} ) => {
+  console.log(parts)
+  const totalExercises = parts.reduce((sum, part) => sum + part.exercises, 0);
     return (
-      <>
-        {parts.reduce((accumulator, part) => {
-          return accumulator + part.exercises;
-           }, 0)}
-
-      </>
+      <p><strong>Total exercises</strong> {totalExercises}</p>
     )
   }
   

@@ -3,12 +3,11 @@ import { PropTypes } from 'prop-types'
 import Total from './Total'
 
 const Content = ( {parts} ) => {
+  console.log("HELLO FROM CONTENT",parts)
   return (
       <>
-        {parts.map(part =>
-         <Part key={part.id} part={part} />
-         )}
-         <Total parts={parts}/>
+        <Part parts={parts}/>
+        <Total parts={parts}/>
       </>
     )
   }

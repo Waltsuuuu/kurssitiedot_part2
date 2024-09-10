@@ -3,18 +3,21 @@ import Content from './Content'
 import { PropTypes } from 'prop-types'
 
 
-const Course = ({ course }) => {
-
+const Course = ({ courseId, courses }) => {
+    const course = courses.find(course => course.id === courseId);
+    
+    console.log("HELLO FROM COURSE", course)
     return (
     <>
-        <Header course={course.name}/>
-        <Content parts={course.parts}/>
+    <Header>{course.name}</Header>
+    <Content parts={course.parts}/>
     </>
     )
 }
 
 Course.propTypes = {
-    course: PropTypes.object
+    courses: PropTypes.array,
+    courseId: PropTypes.number
   }
 
 export default Course
